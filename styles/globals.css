@@ -1,0 +1,246 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* utils */ 
+.blue-btn {
+  background: #1976d2 !important;
+}
+
+.render-animation {
+  animation: render-animation 0.5s;
+}
+@keyframes render-animation {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Global */
+body {
+  background: #212121;
+  color: #eee;
+  padding: 0 !important;
+  margin: 0;
+  overflow: auto !important;
+}
+label {
+  color: #aaa !important;
+}
+input {
+  color: #eee !important;
+}
+fieldset {
+  border-color: #eee !important;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.notifications-menu::-webkit-scrollbar,
+.replies-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.replies-wrapper,
+.notifications-menu {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Navbar */
+.navbar {
+  position: fixed !important;
+  height: 55px !important;
+  background: #111 !important;
+}
+.navbar .new-post-btn {
+  margin-right: 1rem;
+}
+.navbar .css-r6ewbb-MuiToolbar-root {
+  min-height: 55px !important;
+}
+/* Navbar > Settings tooltip menu */
+#menu-appbar .css-6hp17o-MuiList-root-MuiMenu-list {
+  background: #111;
+  color: #eee;
+  padding-top: 0;
+}
+
+/* Post Card exceptions */
+.post-card-wrapper .MuiCardHeader-subheader {
+  color: #aaa !important;
+}
+
+/* [post_slug] (Extended Post) */
+.extended-post-content {
+  background: #111;
+  color: #eee;
+  border-radius: 4px;
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%),
+    0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+}
+
+/* Post Create Modal */
+.post-create-modal-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+}
+.post-create-modal-wrapper:focus-visible {
+  outline: none !important;
+}
+@media only screen and (min-width: 768px) {
+  .post-create-modal-wrapper {
+    width: 50%;
+  }
+}
+
+/* Post create form */
+.post-create-form-wrapper {
+  background: #111;
+  border: 2px solid #333;
+}
+.post-create-form-wrapper input,
+.post-create-form-wrapper textarea {
+  background: #111;
+  border: 1px solid #444;
+}
+
+.form-error {
+  background: rgb(255, 163, 163);
+  border: 1px solid rgb(255, 141, 141);
+}
+
+/* Comment Create Form */
+.comment-create-form {
+  background: #111 !important;
+  border-radius: 5px;
+}
+.comment-create-form.isReplyTo {
+  border-radius: 0 !important;
+}
+.comment-create-form input {
+  color: #fff !important;
+}
+.comment-create-form fieldset {
+  border: 2px solid #333 !important;
+}
+.comment-create-form.isReplyTo fieldset {
+  border: none !important;
+}
+.post-create-form .btn-submit,
+.comment-create-form .btn-submit {
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+  border-radius: 5px 0 2px 0;
+  background: #1976d2;
+}
+.comment-create-form.isReplyTo .btn-submit{
+  right: 0 !important;
+  bottom: 0 !important;
+}
+.form-input input {
+  padding-right: 90px;
+  overflow-y: hidden;
+  width: 100%;
+}
+
+/* Comment item */
+.comment-item.isNotReplyTo{
+  margin-top: 0.5rem;
+}
+.comment-item.isNotReplyTo:hover{
+  cursor: pointer;
+}
+.comment-item.isReplyTo .grid {
+  border: none !important;
+  border-top: 1px solid #333 !important;
+  border-radius: 0 !important;
+}
+.comment-like-btn {
+  padding: 0 !important;
+}
+.comment-like-btn .like-icon-svg,
+.comment-like-btn .loading-icon-svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Notifications */
+.notifications-menu{
+  position: absolute;
+  top: 60px;
+  left: -60px;
+  width: 270px;
+  max-height: 200px;
+  overflow-y: scroll;
+  background: #222 !important;
+  color: #eee !important;
+  border: 1px solid #444
+}
+.clear-notifications-wrapper{
+  z-index: 999;
+  background: #1976d2;
+  color: #eee !important;
+  width: 270px;
+  display: flex;
+  align-items: center;
+  padding-left: 7px;
+}
+.clear-notifications-wrapper .clear-all-btn-wrapper{
+  flex-grow: 1;
+  font-size: 12px;
+  text-align: right;
+}
+.clear-all-btn-wrapper button{
+  color: #eee !important;
+}
+.notifications-menu .menu-list{
+  padding: 0 !important;
+}
+.notifications-menu .list-item{
+  display: flex;
+  align-items: center;
+  padding: 10px 5px;
+  border-top: 1px solid #555;
+}
+.notifications-menu .avatar{
+  width: 30px;
+  height: 30px;
+}
+.notifications-menu .message span{
+  font-size: 13px;
+}
+.notifications-menu .message .badge-new-notification{
+  background: #d32f2f;
+  color: #fff;
+  border-radius: 5px;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  padding: 3px;
+  font-size: 10px;
+  line-height: 10px;
+}
+
+
+/* SweetAlert overrides */
+/* Overlay */
+.swal2-container.swal2-backdrop-show {
+  background: rgba(0, 0, 0, 0.2) !important;
+}
+.swal2-icon {
+  margin: 1em auto 1em !important;
+}
+.swal2-title {
+  font-size: 20px !important;
+  padding-top: 0 !important;
+}
+.swal2-container.swal2-center>.swal2-popup{
+  padding-top: 20px;
+}
